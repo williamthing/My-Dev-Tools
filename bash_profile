@@ -76,7 +76,7 @@ function gg() {
 # update my resume
 function updateResume() {
     cp "$1" ~/Desktop/Codes/williamthing.github.io/files/
-    cp "$1" ~/Desktop/Codes/Personal\ Site/William\'s\ Personal\ Website/files/
+    cp "$1" ~/Desktop/Codes/Personal-Website/William\'s\ Personal\ Website/files/
 }
 
 # updates my website repos
@@ -85,7 +85,7 @@ function updateSite() {
     pushd williamthing.github.io
     gg "$1"
     popd
-    pushd Personal\ Site/William\'s\ Personal\ Website
+    pushd Personal-Website/
     gg "$1"
     popd
 }
