@@ -89,3 +89,10 @@ function updateSite() {
     gg "$1"
     popd
 }
+
+function updateDev() {
+    cd
+    cp .bash_profile ~/Desktop/Codes/mydevtools/bash_profile
+    cp .vimrc ~/Desktop/Codes/mydevtools/vimrc
+    cd ~/Desktop/Codes/mydevtools/
+}
