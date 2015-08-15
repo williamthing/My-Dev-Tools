@@ -4,6 +4,7 @@
 # Alias
 alias b="vim ~/.bash_profile"
 alias d="cd ~/Documents"
+alias dl="cd ~/Downloads"
 alias code="cd ~/Desktop/Codes/"
 alias cb="cd ~/Desktop/CloudBolt"
 alias sb="source ~/.bash_profile"
@@ -14,7 +15,12 @@ alias u="cd .. && ls"
 alias h="history"
 alias v="vim ~/.vimrc"
 alias c="cd ~/.vim/colors"
+alias s="cd ~/Desktop/Stock"
 alias ls="ls -f"
+alias push="pushd"
+alias pop="popd"
+alias gs='git status'
+alias freez='pip freeze'
 
 # goes back to directory you were in
 alias back="cd $OLDPWD"
@@ -50,14 +56,15 @@ function srchi {
     --exclude-dir="static_src" --exclude-dir=".git" --color=always "$1" . | less -FRS
 }
 
+function sd() {
+    cd ~/Desktop/Stock
+    vi dividends
+}
+
 # search and pipe to vim
 function srchv {
     vim -p $(grep -rIlE --color=none "$1" --exclude-dir=migrations \
     --exclude-dir="static_src" --exclude-dir=".git" *)
-}
-
-function s() {
-    source "$1"
 }
 
 function l() {
@@ -90,9 +97,15 @@ function updateSite() {
     popd
 }
 
+# updates my bash profile in repo
 function updateDev() {
     cd
     cp .bash_profile ~/Desktop/Codes/mydevtools/bash_profile
     cp .vimrc ~/Desktop/Codes/mydevtools/vimrc
     cd ~/Desktop/Codes/mydevtools/
+}
+
+function r() {
+    d
+    cd Resumes
 }
