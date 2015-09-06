@@ -4,6 +4,7 @@
 # Alias
 alias b="vim ~/.bash_profile"
 alias d="cd ~/Documents"
+alias p="cd /Users/WilliamThing/Desktop/Codes/Random/Practice"
 alias dl="cd ~/Downloads"
 alias code="cd ~/Desktop/Codes/"
 alias cb="cd ~/Desktop/CloudBolt"
@@ -16,11 +17,13 @@ alias h="history"
 alias v="vim ~/.vimrc"
 alias c="cd ~/.vim/colors"
 alias s="cd ~/Desktop/Stock"
+alias i='vi ~/Desktop/Stock/investments'
 alias ls="ls -f"
 alias push="pushd"
 alias pop="popd"
 alias gs='git status'
 alias freez='pip freeze'
+alias dl='cd ~/Downloads'
 
 # goes back to directory you were in
 alias back="cd $OLDPWD"
@@ -103,6 +106,18 @@ function updateDev() {
     cp .bash_profile ~/Desktop/Codes/mydevtools/bash_profile
     cp .vimrc ~/Desktop/Codes/mydevtools/vimrc
     cd ~/Desktop/Codes/mydevtools/
+}
+
+# changes file names in git repo
+function gm {
+    cp $1 $2
+    git rm $1
+    git add $2
+}
+
+# gets all the commits which have deleted files and the files deleted
+function gd {
+    git log --diff-filter=D --summary
 }
 
 function r() {

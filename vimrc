@@ -7,7 +7,7 @@ set nu
 "indicator for trailing spaces and tabs"
 set list listchars=tab:→·,trail:·
 
-"cursor on curr line
+"cursor on curr line"
 set cursorline
 
 "color scheme for vim"
